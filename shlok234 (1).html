@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lavanya 💖 | Bestie Forever | 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    --bg1:#ffb6c1;
+    --bg2:#fbc2eb;
+    --card:rgba(255,255,255,.18);
+    --text:#fff;
+}
+
+/* NIGHT MODE */
+body.night{
+    --bg1:#0f2027;
+    --bg2:#203a43;
+    --card:rgba(255,255,255,.08);
+    background:radial-gradient(circle at top,#2c5364,#0f2027);
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',cursive;
+    background:radial-gradient(circle at top,var(--bg1),var(--bg2));
+    color:var(--text);
+    overflow-x:hidden;
+    text-align:center;
+    transition:.8s;
+}
+
+/* LOCK SCREEN */
+#lock{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+input,button{
+    padding:14px 22px;
+    border-radius:30px;
+    border:none;
+    font-size:1rem;
+    margin:8px;
+}
+
+button{
+    background:#ff4f9a;
+    color:#fff;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+/* BOOK */
+#openBtn,#book{display:none}
+
+.book{
+    width:90%;
+    max-width:850px;
+    margin:70px auto;
+    perspective:2000px;
+}
+
+.page{
+    background:var(--card);
+    backdrop-filter:blur(14px);
+    border-radius:30px;
+    padding:40px;
+    margin-bottom:40px;
+    box-shadow:0 0 40px rgba(255,255,255,.35);
+    transform-origin:left;
+    transition:1.2s;
+}
+
+.page.flip{
+    transform:rotateY(-180deg);
+    opacity:0;
+}
+
+h1{
+    font-size:3.2rem;
+    text-shadow:0 0 30px #ff5fa2;
+}
+
+h2{
+    font-size:2rem;
+}
+
+p{
+    font-size:1.3rem;
+    line-height:1.8;
+}
+
+/* PHOTOS */
+.photos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:18px;
+    margin-top:25px;
+}
+
+.photos img{
+    width:100%;
+    border-radius:20px;
+    transition:.5s;
+}
+
+.photos img:hover{
+    transform:scale(1.12);
+    box-shadow:0 0 30px #fff;
+}
+
+/* FALLING HEARTS */
+.heart{
+    position:fixed;
+    font-size:24px;
+    animation:fall linear infinite;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{transform:translateY(-10px);opacity:1}
+    to{transform:translateY(100vh);opacity:0}
+}
+
+/* CONTROLS */
+.controls{
+    position:fixed;
+    top:15px;
+    right:15px;
+}
+
+footer{
+    margin:50px 0;
+    font-size:1.3rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 MUSIC -->
+<audio id="music" loop>
+    <source src="blue (instrumental).mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🔒 LOCK -->
+<div id="lock">
+    <h1>💖 Lavanya’s Bestie Book 💖</h1>
+    <p>Only for my favorite person 🔐</p>
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="unlock()">Unlock 💕</button>
+</div>
+
+<!-- 💌 OPEN -->
+<div id="openBtn">
+    <button onclick="openBook()">📖 Open Bestie Letter 📖</button>
+</div>
+
+<!-- 🌙 CONTROLS -->
+<div class="controls" id="controls" style="display:none">
+    <button onclick="toggleNight()">🌙 Night Mode</button>
+</div>
+
+<!-- 📖 BOOK -->
+<div id="book" class="book">
+
+<div class="page">
+    <h1>✨ Happy New Year 2026 ✨</h1>
+    <p>To my amazing bestie, <b>Lavanya</b> 💖</p>
+    <button onclick="nextPage(this)">Next ➜</button>
+</div>
+
+<div class="page">
+    <h2>💞 From My Heart</h2>
+    <p>
+        Lavanya 🌸,<br><br>
+        You are not just my best friend —
+        you are my comfort 🫶,
+        my safe space 🌙,
+        and my favorite soul to laugh with 😂.<br><br>
+        Life feels lighter and happier
+        just because you are in it ✨.
+        Thank You For Coming into my life.😍
+        Thank you actually making me smile and laugh.😅
+        Thank you so much for being so understanding.😉
+        Thank you so much for caring about me.😗
+        Thank you so much for being my biggest supporter.🤗
+        I really appreciate you so much.😘
+        I Love You So Much.💖💖
+    </p>
+    <button onclick="nextPage(this)">Next ➜</button>
+</div>
+
+<div class="page">
+    <h2>📸🫶 My Darling</h2>
+    <div class="photos">
+        <!-- Replace with your real photos -->
+        <img src="C:\Users\siddh\Downloads\607559307_1817443205619183_3800924773244992544_n.jpg">
+        <img src="C:\Users\siddh\Downloads\600879500_1556602085461724_7120245056657535064_n.jpg">
+        <img src="C:\Users\siddh\Downloads\607563049_1589173225866787_1196665258241045751_n.jpg">
+        <img src="C:\Users\siddh\Downloads\573829512_18082979729490516_477474760391783330_n.jpg">
+    </div>
+    <button onclick="nextPage(this)">Next ➜</button>
+</div>
+
+<div class="page">
+    <h2>🌸 My Promise As Your Bestie</h2>
+    <p>
+        I promise to stand by you 🤍,<br>
+        protect your smile 😊,<br>
+        support your dreams 🌟,<br>
+        and always be there —
+        no matter what 💕.
+    </p>
+    <button onclick="nextPage(this)">Next ➜</button>
+</div>
+
+<div class="page">
+    <h2>✨ My Wish For 2026</h2>
+    <p>
+        May this year bring you happiness 🌈,<br>
+        success 🌟,<br>
+        peace 🌷,<br>
+        and endless reasons to smile 😍.<br><br>
+        You deserve the very best,
+        today and always 💖.
+
+        1 Year, 12 Months, 365 Days, 760 Hours
+        525600 Minutes, 31,536,000 Seconds
+        Every Day, Every Night, Every Time
+        I Always Loveeee Youuuuu!!💕💖
+    </p>
+</div>
+
+<footer>
+    With all my love ❤️<br>
+    Forever your bestie,<br>
+    <b>Siddhu</b> 💖
+</footer>
+
+</div>
+
+<script>
+const password="lavanya";
+
+function unlock(){
+    if(pass.value===password){
+        lock.style.display="none";
+        openBtn.style.display="block";
+        music.play();
+    }else alert("Wrong password 💔");
+}
+
+function openBook(){
+    openBtn.style.display="none";
+    book.style.display="block";
+    controls.style.display="block";
+}
+
+/* PAGE FLIP */
+function nextPage(btn){
+    btn.parentElement.classList.add("flip");
+}
+
+/* NIGHT MODE */
+function toggleNight(){
+    document.body.classList.toggle("night");
+}
+
+/* FALLING HEARTS */
+function heart(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*innerWidth+"px";
+    h.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,170);
+</script>
+
+</body>
+</html>
